@@ -1,0 +1,31 @@
+[general]
+import = ["./rose-pine.toml"]
+live_config_reload = true
+working_directory = "C:/"
+
+[window]
+decorations = "None"
+padding = { x = 5, y = 5 }
+opacity = 0.93
+
+[font]
+normal = { family = "JetBrainsMonoNL NF", style = "Regular" }
+bold = { style = "Regular" }
+italic = { style = "Regular" }
+bold_italic = { style = "Regular" }
+
+offset = { x = 1, y = 1 }
+glyph_offset = { x = 0, y = 1 }
+size = 10
+
+[keyboard]
+bindings = [
+    { key = "W", mods = "Control|Shift", action = "Quit" },
+    # { key = "N", mods = "Control|Shift", command = { program = "pwsh", args = ["C:/Users/wrapp/spawn-alacritty.ps1"] } },
+    # { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+    { key = "L", mods = "Control|Shift", chars = "l" },
+    { key = "K", mods = "Control", chars = "\u0003" },
+]
+
+[terminal]
+shell = { program = "pwsh", args = ["-NoLogo"] }
