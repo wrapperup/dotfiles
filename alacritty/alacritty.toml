@@ -21,6 +21,8 @@ size = 10
 [keyboard]
 bindings = [
     { key = "W", mods = "Control|Shift", action = "Quit" },
+    { key = "Space", mods = "Control", chars = "\u0000" },
+    { key = "Back",  mods = "Control", chars = "\u0017" },
     { key = "L", mods = "Control|Shift", chars = "l" },
     { key = "K", mods = "Control", chars = "\u0003" },
 ]
