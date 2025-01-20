@@ -21,8 +21,6 @@ size = 10
 [keyboard]
 bindings = [
     { key = "W", mods = "Control|Shift", action = "Quit" },
-    # { key = "N", mods = "Control|Shift", command = { program = "pwsh", args = ["C:/Users/wrapp/spawn-alacritty.ps1"] } },
-    # { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
     { key = "L", mods = "Control|Shift", chars = "l" },
     { key = "K", mods = "Control", chars = "\u0003" },
 ]
