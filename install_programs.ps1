@@ -14,7 +14,7 @@ winget install RamenSoftware.Windhawk -h
 winget install Discord.Discord -h
 winget install Zulip.Zulip -h
 
-winget install Docker.DockerDesktop -h
+winget install Kitware.CMake -h
 
 winget install Microsoft.VisualStudio.2022.Community -h --override "--passive --config ./my.vsconfig"
 
@@ -23,6 +23,8 @@ winget install JetBrains.Rider -h
 
 winget install Rustlang.Rustup -h
 cargo install ripgrep
+
+winget install Docker.DockerDesktop -h
 
 winget install OpenJS.NodeJS -h
 winget install pnpm.pnpm -h
