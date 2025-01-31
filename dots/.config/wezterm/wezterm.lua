@@ -10,5 +10,15 @@ return {
 	window_decorations = "RESIZE",
     enable_tab_bar = false,
 	max_fps = 160,
+
+    window_close_confirmation = "NeverPrompt",
+
+    keys = {
+        {
+            key = 'w',
+            mods = 'CMD',
+            action = wezterm.action.CloseCurrentPane { confirm = false },
+        },
+    }
 }
 

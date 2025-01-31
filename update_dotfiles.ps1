@@ -8,3 +8,7 @@ if ($is_in_git_dir -eq "true") {
 
 # Copy home-dir configurations
 Copy-Item -Force -Recurse .\dots\* ~
+
+# Copy powershell profile
+New-Item -ItemType File -Path $PROFILE -Force
+Copy-Item .\Microsoft.PowerShell_profile.ps1 $PROFILE -Force
