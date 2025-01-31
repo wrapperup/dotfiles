@@ -12,7 +12,7 @@ winget install GlazeWM
 
 winget install Docker.DockerDesktop
 
-REM winget install --id Microsoft.VisualStudio.2022.Community --override "--passive --config ./my.vsconfig"
+winget install --id Microsoft.VisualStudio.2022.Community --override "--passive --config ./my.vsconfig"
 
 winget install JetBrains.Toolbox
 winget install JetBrains.Rider
