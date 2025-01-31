@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 # Sync neovim config
 $is_in_git_dir = git -C $env:LOCALAPPDATA\nvim rev-parse --is-inside-work-tree
 if ($is_in_git_dir -eq "true") {
