@@ -13,6 +13,9 @@ return {
 
     window_close_confirmation = "NeverPrompt",
 
+    window_background_opacity = 0.0,
+    win32_system_backdrop = "Mica",
+
     keys = {
         {
             key = 'w',

@@ -16,7 +16,7 @@ winget install Zulip.Zulip -h
 
 winget install Kitware.CMake -h
 
-winget install Microsoft.VisualStudio.2022.Community -h --override "--passive --config ./my.vsconfig"
+winget install Microsoft.VisualStudio.2022.Community -h --override "--passive --config ./win/my.vsconfig"
 
 winget install JetBrains.Toolbox -h
 winget install JetBrains.Rider -h
@@ -32,3 +32,6 @@ winget install CoreyButler.NVMforWindows -h
 
 winget install Perforce.P4V -h
 winget install WireGuard.WireGuard -h
+
+winget install 7zip.7zip -h
+winget install ShareX.ShareX -h

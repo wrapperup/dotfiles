@@ -99,11 +99,12 @@ workspaces:
 window_rules:
   - commands: ["set-floating"]
     match:
-      - window_process: { equals: "UnrealEditor|UnrealEditor-Win64-DebugGame" }
+      - window_process: { regex: "UnrealEditor|UnrealEditor-Win64-DebugGame" }
       - window_process: { equals: "p4v" }
       - window_process: { equals: "raddbg" }
       - window_process: { equals: "blender" }
-      - window_process: { equals: "main|main_hotreload|game_debug|game_hot_reload" }
+      - window_process: { regex: "main|main_hotreload|game_debug|game_hot_reload" }
+      - window_process: { regex: "Photoshop|Illustrator" }
 
   - commands: ["move --workspace 1"]
     match:
