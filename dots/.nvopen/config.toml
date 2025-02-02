@@ -1,0 +1,11 @@
+[nvim.remote]
+enabled = false
+listen = "\\\\.\\pipe\\nvim-pipe-1234"
+
+[terminal.WezTerm]
+
+# [terminal.Alacritty]
+
+# [terminal.WindowsTerminal]
+# focus_tab = 0
+# default_profile = "PowerShell"

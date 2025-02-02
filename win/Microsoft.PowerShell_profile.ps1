@@ -1,5 +1,9 @@
 $PSStyle.FileInfo.Directory = ""
 
+function My-Ip {
+    (Invoke-WebRequest ifconfig.me/ip).Content.Trim()
+}
+
 function prompt {
     $p = $executionContext.SessionState.Path.CurrentLocation
     $osc7 = ""

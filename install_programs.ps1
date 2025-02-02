@@ -6,6 +6,7 @@ winget install wez.wezterm -h
 winget install Microsoft.PowerShell -h
 winget install Git.Git -h --custom '/Components="gitlfs" /EditorOptions=VIM /DefaultBranchName=main /PathOption=Cmd /SSHOption=ExternalOpenSSH /CurlOption=WinSSL /CRLFOption=CRLFAlways /BashTerminalOption=ConHost /UseCredentialManager=Enabled /PerformanceTweaksFSCache=Enabled /EnableSymlinks=Disabled /EnablePseudoConsoleSupport=Disabled /EnableFSMonitor=Enabled'
 winget install Neovim.Neovim -h
+winget install fzf -h
 
 winget install GlazeWM -h
 winget install AltSnap.AltSnap -h

@@ -12,4 +12,13 @@ map gi m'<Action>(ReSharperGotoImplementation)
 map gd m'<Action>(GotoDeclaration)
 map - m'<Action>(SelectInProjectView)
 
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
+
+map <C-]> <Action>(GotoNextError)
+map <C-[> <Action>(GotoPreviousError)
+
+map <leader>y "+y
+map <leader>Y "+Y
+
 set surround
