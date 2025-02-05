@@ -105,6 +105,8 @@ window_rules:
       - window_process: { equals: "blender" }
       - window_process: { regex: "main|main_hotreload|game_debug|game_hot_reload" }
       - window_process: { regex: "Photoshop|Illustrator" }
+      - window_title: { regex: "Brickadia" }
+      - window_title: { regex: "Welcome to JetBrains*" }
 
   - commands: ["move --workspace 1"]
     match:

@@ -1,6 +1,9 @@
 let mapleader=" "
 
 set scrolloff=7N
+set visualbell
+set surround
+sethandler n:vim i:ide
 
 map <F2> <Action>(Refactorings.QuickListPopupAction)
 map <F3> <Action>(ShowIntentionActions)
@@ -21,4 +24,9 @@ map <C-[> <Action>(GotoPreviousError)
 map <leader>y "+y
 map <leader>Y "+Y
 
-set surround
+map <F4> <Action>(ShowIntentionActions)
+map <F2> <Action>(RenameElement)
+
+map K <Action>(ShowHoverInfo)
+
+map gcc <Action>(CommentByLineComment)<esc>

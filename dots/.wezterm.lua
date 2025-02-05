@@ -16,10 +16,12 @@ return {
     window_background_opacity = 0.0,
     win32_system_backdrop = "Mica",
 
+    window_close_confirmation = "NeverPrompt",
+
     keys = {
         {
             key = 'w',
-            mods = 'CMD',
+            mods = 'CTRL|SHIFT',
             action = wezterm.action.CloseCurrentPane { confirm = false },
         },
     }
