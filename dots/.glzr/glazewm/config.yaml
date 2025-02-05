@@ -80,7 +80,7 @@ window_behavior:
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
       # maximize button, then it'll be fullscreen'ed normally instead.
-      maximized: false
+      maximized: true
 
       # Whether to show fullscreen windows as always on top.
       shown_on_top: false
@@ -99,33 +99,40 @@ workspaces:
 window_rules:
   - commands: ["set-floating"]
     match:
-      - window_process: { regex: "UnrealEditor*" }
       - window_process: { equals: "p4v" }
-      - window_process: { equals: "raddbg" }
-      - window_process: { equals: "blender" }
       - window_process: { regex: "main|main_hotreload|game_debug|game_hot_reload" }
-      - window_process: { regex: "Photoshop|Illustrator" }
+
       - window_process: { regex: "Brickadia*" }
+
+      # JetBrains
       - window_title: { regex: "Welcome to JetBrains*" }
+
+      - window_title: { not_regex: "- Unreal Editor" }
+        window_class: { equals: "UnrealWindow" }
+
+      - window_process: { regex: "Photoshop|Illustrator" }
+
+  - commands: ["set-fullscreen"]
+    match:
+      - window_process: { equals: "blender" }
+      - window_process: { equals: "raddbg" }
+      - window_process: { regex: "[Rr]ider64" }
 
   - commands: ["move --workspace 1"]
     match:
-      # Move browsers to workspace 1.
       - window_process: { regex: "msedge|brave|chrome|firefox" }
-      - window_process: { equals: "raddbg" }
 
   - commands: ["move --workspace 2"]
     match:
-      - window_process: { regex: "UnrealEditor*" }
+      - window_class: { equals: "UnrealWindow" }
+      - window_process: { equals: "raddbg" }
 
   - commands: ["move --workspace 3"]
     match:
-      # Move browsers to workspace 1.
       - window_process: { regex: "Zulip|Discord" }
 
   - commands: ["move --workspace 4"]
     match:
-      # Move browsers to workspace 1.
       - window_process: { regex: "slack|UnrealGameSync|p4v" }
 
   - commands: ['ignore']
@@ -134,7 +141,6 @@ window_rules:
       - window_process: { equals: 'zebar' }
       - window_process: { equals: 'cs2' }
       - window_process: { equals: 'Flow.Launcher' }
-      - window_process: { equals: 'Rooster' }
       - window_process: { equals: 'vlc' }
 
       # Ignores picture-in-picture windows for browsers.
@@ -196,8 +202,8 @@ keybindings:
     bindings: ['alt+v']
 
   # Change focus from tiling windows -> floating -> fullscreen.
-  # - commands: ['wm-cycle-focus']
-  #   bindings: ['alt+space']
+  - commands: ['wm-cycle-focus']
+    bindings: ['alt+space']
 
   # Change the focused window to be floating.
   - commands: ['toggle-floating --centered']
@@ -208,12 +214,12 @@ keybindings:
   #   bindings: ['alt+t']
 
   # Change the focused window to be fullscreen.
-  # - commands: ['toggle-fullscreen']
-  #   bindings: ['alt+f']
+  - commands: ['toggle-fullscreen']
+    bindings: ['alt+f']
 
   # Minimize focused window.
-  # - commands: ['toggle-minimized']
-  #   bindings: ['alt+m']
+  - commands: ['toggle-minimized']
+    bindings: ['alt+m']
 
   # Close focused window.
   # - commands: ['close']
