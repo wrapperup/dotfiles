@@ -42,6 +42,6 @@ Set-ItemProperty -Path . -Name BounceTime            -Value 0
 Set-ItemProperty -Path . -Name Flags                 -Value 47
 
 # Register startup programs
-register_startup_program "GlazeWM" "C:\Program Files\glzr.io\GlazeWM\cli\glazewm.exe"
-register_startup_program "AltSnap" "$env:APPDATA\AltSnap\AltSnap.exe"
+# ISSUE: This makes a ghost window. idk what the issue is.
+# register_startup_program "GlazeWM" "C:\Program Files\glzr.io\GlazeWM\cli\glazewm.exe"
 register_startup_program "Zulip" "$env:LOCALAPPDATA\Programs\Zulip\Zulip.exe"
