@@ -3,6 +3,8 @@ let mapleader=" "
 set scrolloff=7N
 set visualbell
 set surround
+set commentary
+
 sethandler n:vim i:ide
 
 map <F2> <Action>(Refactorings.QuickListPopupAction)
@@ -29,4 +31,7 @@ map <F2> <Action>(RenameElement)
 
 map K <Action>(ShowHoverInfo)
 
-map gcc <Action>(CommentByLineComment)<esc>
+vmap <S-Down> <Action>(MoveLineDown)
+vmap <S-Up> <Action>(MoveLineUp)
+vmap <S-Left>  <gv
+vmap <S-Right> >gv

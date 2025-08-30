@@ -1,3 +1,5 @@
+Set-Alias -Name firefox -Value "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+
 $PSStyle.FileInfo.Directory = ""
 
 function My-Ip {

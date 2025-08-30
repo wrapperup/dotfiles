@@ -36,7 +36,7 @@ window_effects:
     # ** Exclusive to Windows 11 due to API limitations.
     border:
       enabled: true
-      color: '#8dbcff'
+      color: '#66669b'
 
     # Remove the title bar from the window's frame.
     # ** Exclusive to Windows 11 due to API limitations.
@@ -54,7 +54,7 @@ window_effects:
   other_windows:
     border:
       enabled: true
-      color: '#a1a1a1'
+      color: '#35354F'
     hide_title_bar:
       enabled: false
     corner_style:
@@ -99,7 +99,7 @@ workspaces:
 window_rules:
   - commands: ["set-floating"]
     match:
-      - window_process: { equals: "p4v" }
+      - window_process: { regex: "p4v|p4merge" }
       - window_process: { regex: "main|main_hotreload|game_debug|game_hot_reload" }
 
       - window_process: { regex: "Brickadia*" }
@@ -111,12 +111,13 @@ window_rules:
         window_class: { equals: "UnrealWindow" }
 
       - window_process: { regex: "Photoshop|Illustrator" }
+      - window_process: { equals: "raddbg" }
 
   - commands: ["set-fullscreen"]
     match:
       - window_process: { equals: "blender" }
-      - window_process: { equals: "raddbg" }
       - window_process: { regex: "[Rr]ider64" }
+      - window_title: { includes: "The RAD Debugger" }
 
   - commands: ["move --workspace 1"]
     match:
@@ -124,7 +125,7 @@ window_rules:
 
   - commands: ["move --workspace 2"]
     match:
-      - window_class: { equals: "UnrealWindow" }
+      # - window_class: { equals: "UnrealWindow" }
       - window_process: { equals: "raddbg" }
 
   - commands: ["move --workspace 3"]
@@ -139,9 +140,14 @@ window_rules:
     match:
       # Ignores any Zebar windows.
       - window_process: { equals: 'zebar' }
+      - window_process: { equals: 'glazewm' }
+      - window_process: { equals: 'pwsh' }
       - window_process: { equals: 'cs2' }
+      - window_process: { equals: 'VALORANT-Win64-Shipping' }
       - window_process: { equals: 'Flow.Launcher' }
       - window_process: { equals: 'vlc' }
+
+      - window_process: { equals: "KeePass" }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
@@ -150,9 +156,16 @@ window_rules:
       # Ignore rules for various 3rd-party apps.
       - window_process: { equals: 'PowerToys' }
         window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      - window_process: { equals: 'PowerToys' }
+        window_title: { regex: '.*? - Peek' }
       - window_process: { equals: 'Lively' }
-        window_class: { regex: 'HwndWrapper*' }
-
+        window_class: { regex: 'HwndWrapper' }
+      - window_process: { equals: 'EXCEL' }
+        window_class: { not_regex: 'XLMAIN' }
+      - window_process: { equals: 'WINWORD' }
+        window_class: { not_regex: 'OpusApp' }
+      - window_process: { equals: 'POWERPNT' }
+        window_class: { not_regex: 'PPTFrameClass' }
 binding_modes:
   # When enabled, all keybindings are disabled except for alt+shift+p which
   # returns to default keybindings.
@@ -223,7 +236,7 @@ keybindings:
 
   # Close focused window.
   # - commands: ['close']
-  #   bindings: ['alt+shift+q']
+  #   bindings: ['ctrl+shift+w']
 
   # Kill GlazeWM process safely.
   - commands: ['wm-exit']
@@ -265,14 +278,14 @@ keybindings:
 
   # Move the focused window's parent workspace to a monitor in a given
   # direction.
-  - commands: ['move-workspace --direction left']
-    bindings: ['alt+shift+a']
-  - commands: ['move-workspace --direction right']
-    bindings: ['alt+shift+f']
-  - commands: ['move-workspace --direction up']
-    bindings: ['alt+shift+d']
-  - commands: ['move-workspace --direction down']
-    bindings: ['alt+shift+s']
+  # - commands: ['move-workspace --direction left']
+  #   bindings: ['alt+shift+left']
+  # - commands: ['move-workspace --direction right']
+  #   bindings: ['alt+shift+right']
+  # - commands: ['move-workspace --direction up']
+  #   bindings: ['alt+shift+up']
+  # - commands: ['move-workspace --direction down']
+  #   bindings: ['alt+shift+down']
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ['move --workspace 1', 'focus --workspace 1']
