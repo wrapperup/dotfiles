@@ -12,3 +12,5 @@ Get-ChildItem -Path $base -File -Recurse | ForEach-Object {
 
     Copy-Item $from $to
 }
+
+Copy-Item $PROFILE .\win\Microsoft.PowerShell_profile.ps1 -Force
