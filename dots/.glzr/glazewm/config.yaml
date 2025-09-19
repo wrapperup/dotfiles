@@ -117,6 +117,7 @@ window_rules:
     match:
       - window_process: { equals: "blender" }
       - window_process: { regex: "[Rr]ider64" }
+      - window_process: { equals: 'Profiler' }
       - window_title: { includes: "The RAD Debugger" }
 
   - commands: ["move --workspace 1"]
@@ -146,6 +147,7 @@ window_rules:
       - window_process: { equals: 'VALORANT-Win64-Shipping' }
       - window_process: { equals: 'Flow.Launcher' }
       - window_process: { equals: 'vlc' }
+      - window_process: { equals: 'Profiler' }
 
       - window_process: { equals: "KeePass" }
 

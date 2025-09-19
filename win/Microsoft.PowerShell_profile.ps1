@@ -1,6 +1,11 @@
 Set-Alias -Name firefox -Value "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+Set-Alias -Name superluminal -Value "C:\\Program Files\\Superluminal\\Performance\\Profiler.exe"
 
 $PSStyle.FileInfo.Directory = ""
+
+function bash {
+  & "C:\Program Files\Git\bin\bash.exe" -li @Args
+}
 
 function My-Ip {
     (Invoke-WebRequest ifconfig.me/ip).Content.Trim()
